@@ -18,7 +18,7 @@ export default function NumberScreen() {
         </TouchableOpacity>
       </View>
       <View style={{ marginLeft: 20, paddingTop: 15 }}>
-        <Text style={{ fontSize: 22, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 22, fontWeight: "bold", color: "#012d3f" }}>
           Whats your number?
         </Text>
         <Text style={{ paddingTop: 10, fontSize: 13, marginBottom: 20 }}>
