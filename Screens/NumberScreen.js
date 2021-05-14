@@ -9,7 +9,7 @@ export default function NumberScreen() {
   const [showMessage, setShowMessage] = useState(false);
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ marginTop: 50, marginRight: 330 }}>
+      <View style={{ marginTop: 60, marginRight: 330 }}>
         <TouchableOpacity>
           <Image
             style={{ width: 26, height: 26 }}
@@ -17,7 +17,7 @@ export default function NumberScreen() {
           />
         </TouchableOpacity>
       </View>
-      <View style={{ marginLeft: 20, paddingTop: 10 }}>
+      <View style={{ marginLeft: 20, paddingTop: 15 }}>
         <Text style={{ fontSize: 22, fontWeight: "bold" }}>
           Whats your number?
         </Text>
