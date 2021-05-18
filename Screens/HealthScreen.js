@@ -41,8 +41,14 @@ export default function HealthScreen() {
             source={require("../assets/rightarr.png")}
           />
         </View>
-        <View style={{ paddingTop: 20 }}>
-          <Requirement title="Dont ride if you have covid 19" />
+        <View style={{ paddingTop: 20, width: 300 }}>
+          <Requirement title="Dont ride if you have COVID-19,think you have it or have related symptoms" />
+        </View>
+        <View style={{ paddingTop: 20, width: 300 }}>
+          <Requirement title="Dont ride if you have COVID-19,think you have it or have related symptoms" />
+        </View>
+        <View style={{ paddingTop: 20, width: 300 }}>
+          <Requirement title="Dont ride if you have COVID-19,think you have it or have related symptoms" />
         </View>
       </View>
     </View>

@@ -1,18 +1,51 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 
 export default function Requirement(props) {
+  const [selected, setselected] = useState(false);
   return (
     <View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        {/* <CheckBox
-          style={{ height: 30, width: 30, borderRadius: 5, marginRight: 15 }}
-          value={isSelected}
-          onValueChange={setSelection}
-        /> */}
+        <TouchableOpacity
+          onPress={() => {
+            if (selected === true) {
+              setselected(false);
+            } else {
+              setselected(true);
+            }
+          }}
+        >
+          <View
+            style={{
+              width: 27,
+              height: 27,
+              borderColor: "black",
+              borderWidth: 1,
+              borderRadius: 5,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {selected ? (
+              <Image
+                style={{ height: 20, width: 20 }}
+                source={require("../assets/tick.png")}
+              />
+            ) : null}
+          </View>
+        </TouchableOpacity>
 
-        <Text style={{ fontSize: 15 }}>{props.title}</Text>
+        <Text style={{ fontSize: 16, paddingLeft: 10 }}>{props.title}</Text>
       </View>
+
+      <View
+        style={{
+          width: 330,
+          borderColor: "black",
+          borderWidth: 0.5,
+          marginTop: 20,
+        }}
+      ></View>
     </View>
   );
 }
