@@ -5,6 +5,7 @@ import HomeScreen from "./Screens/HomeScreen";
 import NumberScreen from "./Screens/NumberScreen";
 import Verify from "./Screens/Verify";
 import HealthScreen from "./Screens/HealthScreen";
+import Track from "./Screens/Track";
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <NumberScreen /> */}
       {/* <Verify /> */}
-      <HealthScreen />
+      {/* <HealthScreen /> */}
+      <Track />
       <StatusBar style="auto" />
     </View>
   );

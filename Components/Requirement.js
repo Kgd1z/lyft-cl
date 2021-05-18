@@ -5,7 +5,13 @@ export default function Requirement(props) {
   const [selected, setselected] = useState(false);
   return (
     <View>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          paddingTop: 15,
+        }}
+      >
         <TouchableOpacity
           onPress={() => {
             if (selected === true) {
@@ -43,7 +49,7 @@ export default function Requirement(props) {
           width: 330,
           borderColor: "black",
           borderWidth: 0.5,
-          marginTop: 20,
+          marginTop: 15,
         }}
       ></View>
     </View>
