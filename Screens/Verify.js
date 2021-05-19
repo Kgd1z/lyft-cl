@@ -8,10 +8,12 @@ import {
   TextInput,
 } from "react-native";
 import CodeInput from "../Components/CodeInput";
+import { useNavigation } from "@react-navigation/native";
 export default function Verify() {
+  const navigation = useNavigation();
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ marginTop: 60, marginRight: 330 }}>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
+      <View style={{ marginTop: 10, marginRight: 330 }}>
         <TouchableOpacity>
           <Image
             style={{ width: 26, height: 26 }}
@@ -31,9 +33,12 @@ export default function Verify() {
         <CodeInput />
       </View>
 
-      <TouchableOpacity style={{ alignSelf: "flex-end" }}>
+      <TouchableOpacity
+        style={{ alignSelf: "flex-end" }}
+        onPress={() => navigation.navigate("HealthScreen")}
+      >
         <Image
-          style={{ width: 62, height: 62 }}
+          style={{ width: 62, height: 62, marginTop: 240, marginRight: 10 }}
           source={require("../assets/next.png")}
         />
       </TouchableOpacity>

@@ -1,10 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 export default function HomeScreen() {
+  const navigation = useNavigation();
   return (
-    <View>
-      <View style={{ marginTop: 350, alignItems: "center" }}>
+    <View style={styles.container}>
+      <View
+        style={{
+          marginTop: 350,
+          alignItems: "center",
+          backgroundColor: "#fff",
+        }}
+      >
         <Image
           style={{ width: 90, height: 60 }}
           source={require("../assets/logo.png")}
@@ -26,6 +33,7 @@ export default function HomeScreen() {
             justifyContent: "center",
             borderRadius: 25,
           }}
+          onPress={() => navigation.navigate("NumberScreen")}
         >
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 17 }}>
             Get started
@@ -46,4 +54,9 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+});

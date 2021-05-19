@@ -9,7 +9,7 @@ export default function Requirement(props) {
         style={{
           flexDirection: "row",
           alignItems: "center",
-          paddingTop: 15,
+          paddingTop: 16,
         }}
       >
         <TouchableOpacity
@@ -41,7 +41,7 @@ export default function Requirement(props) {
           </View>
         </TouchableOpacity>
 
-        <Text style={{ fontSize: 16, paddingLeft: 10 }}>{props.title}</Text>
+        <Text style={{ fontSize: 15, paddingLeft: 10 }}>{props.title}</Text>
       </View>
 
       <View

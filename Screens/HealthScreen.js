@@ -1,20 +1,29 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import Requirement from "../Components/Requirement";
-
+import { useNavigation } from "@react-navigation/native";
 export default function HealthScreen() {
+  const navigation = useNavigation();
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "#fff", flex: 1 }}>
       <View
         style={{
           flex: 1,
           alignItems: "center",
           marginLeft: 10,
           marginRight: 10,
+          backgroundColor: "#fff",
         }}
       >
         <Image
-          style={{ width: 330, height: 170, marginTop: 30 }}
+          style={{ width: 330, height: 170 }}
           source={require("../assets/health.png")}
         />
         <View>
@@ -76,6 +85,15 @@ export default function HealthScreen() {
             and provide
           </Text>
         </View>
+        <TouchableOpacity
+          style={{ alignSelf: "flex-end" }}
+          onPress={() => navigation.navigate("Track")}
+        >
+          <Image
+            style={{ width: 62, height: 62, marginTop: 240, marginRight: 10 }}
+            source={require("../assets/next.png")}
+          />
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

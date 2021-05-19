@@ -1,15 +1,16 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
-
+import { useNavigation } from "@react-navigation/native";
 export default function NumberScreen() {
   const [value, setValue] = useState("");
   const [formattedValue, setFormattedValue] = useState("");
   const [valid, setValid] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const navigation = useNavigation();
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ marginTop: 60, marginRight: 330 }}>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
+      <View style={{ marginTop: 10, marginRight: 330 }}>
         <TouchableOpacity>
           <Image
             style={{ width: 26, height: 26 }}
@@ -63,7 +64,10 @@ export default function NumberScreen() {
         Find my account
       </Text>
 
-      <TouchableOpacity style={{ alignSelf: "flex-end" }}>
+      <TouchableOpacity
+        style={{ alignSelf: "flex-end" }}
+        onPress={() => navigation.navigate("Verify")}
+      >
         <Image
           style={{ width: 62, height: 62 }}
           source={require("../assets/next.png")}

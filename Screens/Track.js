@@ -1,18 +1,34 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 export default function Track() {
+  const navigation = useNavigation();
   return (
     <View
-      style={{ flex: 1, alignItems: "center", marginLeft: 10, marginRight: 10 }}
+      style={{
+        flex: 1,
+        alignItems: "center",
+        marginLeft: 10,
+        marginRight: 10,
+        backgroundColor: "#fff",
+      }}
     >
-      <View style={{ paddingTop: 100 }}>
+      <View style={{ paddingTop: 100, backgroundColor: "#fff" }}>
         <Image
           style={{ width: 250, height: 200 }}
           source={require("../assets/track.png")}
         />
       </View>
-      <View style={{ marginLeft: 10, marginRight: 10 }}>
+      <View
+        style={{ marginLeft: 10, marginRight: 10, backgroundColor: "#fff" }}
+      >
         <Text
           style={{
             fontSize: 25,
@@ -38,7 +54,24 @@ export default function Track() {
           borderRadius: 30,
           alignItems: "center",
           justifyContent: "center",
-          marginTop: 280,
+          marginTop: 230,
+        }}
+        onPress={() => {
+          Alert.alert(
+            "'Lyft' Would Like to Send You Nottifications",
+            "Notifications may include alerts sounds and icon badges, these may be configured in settings",
+            [
+              {
+                text: "Dont Allow",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel",
+              },
+              {
+                text: "Allow",
+                onPress: () => navigation.navigate("MapScreen"),
+              },
+            ]
+          );
         }}
       >
         <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
