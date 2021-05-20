@@ -6,6 +6,7 @@ import NumberScreen from "./Screens/NumberScreen";
 import Search from "./Screens/Search";
 import Verify from "./Screens/Verify";
 import HealthScreen from "./Screens/HealthScreen";
+import Rent from "./Screens/Rent";
 import Track from "./Screens/Track";
 import MapScreen from "./Screens/MapScreen";
 import { NavigationContainer } from "@react-navigation/native";
@@ -25,6 +26,7 @@ export default function App() {
           <Stack.Screen name="Track" component={Track} />
           <Stack.Screen name="MapScreen" component={MapScreen} />
           <Stack.Screen name="Search" component={Search} />
+          <Stack.Screen name="Rent" component={Rent} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
