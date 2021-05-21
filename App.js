@@ -15,7 +15,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Stack = createStackNavigator();
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       {Platform.OS === "ios" && <StatusBar barStyle="auto" />}
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -29,7 +29,7 @@ export default function App() {
           <Stack.Screen name="Rent" component={Rent} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+    </View>
   );
 }
 

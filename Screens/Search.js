@@ -19,7 +19,7 @@ export default function Search() {
         provider={PROVIDER_GOOGLE}
         style={{
           width: 400,
-          height: 400,
+          height: 440,
         }}
       >
         {/* <Hamburger /> */}
