@@ -70,7 +70,7 @@ export default function Track() {
                 },
                 {
                   text: "Allow",
-                  onPress: () => navigation.navigate("MapScreen"),
+                  onPress: () => navigation.navigate("ReservationScreen"),
                 },
               ]
             );

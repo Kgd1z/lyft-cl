@@ -8,10 +8,12 @@ import Verify from "./Screens/Verify";
 import HealthScreen from "./Screens/HealthScreen";
 import Rent from "./Screens/Rent";
 import Track from "./Screens/Track";
+import Date from "./Screens/Date";
 import MapScreen from "./Screens/MapScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
+import ReservationScreen from "./Screens/ReservationScreen";
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -27,6 +29,11 @@ export default function App() {
           <Stack.Screen name="MapScreen" component={MapScreen} />
           <Stack.Screen name="Search" component={Search} />
           <Stack.Screen name="Rent" component={Rent} />
+          <Stack.Screen name="Date" component={Date} />
+          <Stack.Screen
+            name="ReservationScreen"
+            component={ReservationScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
