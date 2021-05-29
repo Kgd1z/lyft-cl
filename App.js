@@ -14,6 +14,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ReservationScreen from "./Screens/ReservationScreen";
+import LicenseCam from "./Screens/LicenseCam";
+import ManualEntry from "./Screens/ManualEntry";
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
             name="ReservationScreen"
             component={ReservationScreen}
           />
+          <Stack.Screen name="LicenseCam" component={LicenseCam} />
+          <Stack.Screen name="ManualEntry" component={ManualEntry} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

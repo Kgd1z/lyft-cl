@@ -10,9 +10,10 @@ import {
   Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { useNavigation } from "@react-navigation/native";
 export default function ReservationScreen() {
   const [modalVisible, setModalVisible] = useState(false);
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <View style={{ marginLeft: 15, marginRight: 20 }}>
@@ -194,7 +195,6 @@ export default function ReservationScreen() {
             </View>
             <TouchableOpacity
               style={{
-                backgroundColor: "grey",
                 width: 330,
                 height: 50,
                 marginTop: 41,
@@ -203,6 +203,10 @@ export default function ReservationScreen() {
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "#eaecfc",
+              }}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+                navigation.navigate("LicenseCam");
               }}
             >
               <Text
