@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,10 +6,13 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Modal,
+  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ReservationScreen() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <View style={{ marginLeft: 15, marginRight: 20 }}>
@@ -158,16 +161,66 @@ export default function ReservationScreen() {
             marginBottom: 20,
             alignSelf: "center",
           }}
+          onPress={() => setModalVisible(!modalVisible)}
         >
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>
             Reserve
           </Text>
         </TouchableOpacity>
       </View>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <View style={{ width: 250 }}>
+              <Text style={styles.modalText}>Driver's License</Text>
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontSize: 15,
+                  paddingHorizontal: 1,
+                }}
+              >
+                A valid drivers license is required in order to complete your
+                resertvation.
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "grey",
+                width: 330,
+                height: 50,
+                marginTop: 41,
+                borderBottomLeftRadius: 10,
+                borderBottomRightRadius: 10,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#eaecfc",
+              }}
+            >
+              <Text
+                style={{ fontWeight: "bold", color: "#012d3f", fontSize: 15 }}
+              >
+                OK
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
-
+function LicenseModal() {
+  const [modalVisible, setModalVisible] = useState(false);
+  return <View></View>;
+}
 function Detail(props) {
   return (
     <View>
@@ -205,4 +258,35 @@ function Detail(props) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    width: 330,
+    height: 170,
+    backgroundColor: "white",
+    borderRadius: 10,
+    paddingTop: 20,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+
+    fontWeight: "bold",
+    color: "#012d3f",
+    fontSize: 15,
+  },
+});
